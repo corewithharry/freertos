@@ -38,6 +38,8 @@ VPATH = ${RTOS_SOURCE_DIR}:${RTOS_SOURCE_DIR}/portable/MemMang:${RTOS_SOURCE_DIR
 
 OBJS = ${COMPILER}/main.o \
       ${COMPILER}/system_stm32f4xx.o \
+      ${COMPILER}/partest.o \
+      ${COMPILER}/timertest.o \
       ${COMPILER}/list.o \
       ${COMPILER}/queue.o \
       ${COMPILER}/tasks.o \
@@ -66,7 +68,7 @@ OBJS = ${COMPILER}/main.o \
 
 INIT_OBJS = ${COMPILER}/startup_stm32f429_439xx.o
 
-LIBS = -lc
+# LIBS = -lc
 
 #
 # The default rule, which causes init to be built.

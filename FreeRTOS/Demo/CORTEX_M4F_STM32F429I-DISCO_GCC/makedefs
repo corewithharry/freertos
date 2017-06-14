@@ -110,7 +110,7 @@ LIBGCC=${shell ${CC} $(CFLAGS) -print-libgcc-file-name}
 #
 LIBC=${shell ${CC} $(CFLAGS) -print-file-name=libc.a}
 
-LIBS = -lc -lnosys
+# LIBS = -lc -lnosys
 define get_library_path
     $(shell dirname $(shell $(CC) $(CFLAGS) -print-file-name=$(1)))
 endef
@@ -210,12 +210,10 @@ ifeq (${COMPILER}, gcc)
 	 then                                                 \
 	     echo ${LD} -T ${LDSCRIPT_${notdir ${@:.axf=}}}   \
 	                ${LDFLAGSgcc_${notdir ${@:.axf=}}}    \
-	                --start-group $(LIBS) --end-group     \
-	                ${LDFLAGS} -o ${@} ${^};              \
+	                -o ${@} ${^} --start-group -lc -lm -lgcc -lnosys --end-group ${LDFLAGS}; \
 	 fi
 	@${LD} -T ${LDSCRIPT_${notdir ${@:.axf=}}}    \
 	       ${LDFLAGSgcc_${notdir ${@:.axf=}}}    \
-	       --start-group $(LIBS) --end-group     \
-	       ${LDFLAGS} -o ${@} ${^}
+	       -o ${@} ${^} --start-group -lc -lm -lgcc -lnosys --end-group ${LDFLAGS}
 	@${OBJCOPY} -O binary ${@} ${@:.axf=.bin}
 endif

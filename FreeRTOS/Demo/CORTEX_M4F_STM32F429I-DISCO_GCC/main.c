@@ -282,7 +282,7 @@ static void prvSetupHardware( void )
 	NVIC_PriorityGroupConfig( NVIC_PriorityGroup_4 );
 
 	/* Initialise the IO used for the LED outputs. */
-	//vParTestInitialise();
+	vParTestInitialise();
 }
 /*-----------------------------------------------------------*/
 
