@@ -7,7 +7,7 @@
 //  fitness for any particular purpose, or against the infringements of
 //  intellectual property rights of others.
 // ----------------------------------------------------------------------------
-// File Name           : AT91R40008.h
+// File Name           : AT91R40008.h;
 // Object              : AT91R40008 definitions
 // Generated           : AT91 SW Application Group  02/19/2003 (11:13:31)
 // 
@@ -34,8 +34,8 @@ typedef volatile unsigned int at91_reg;
 //              SOFTWARE API DEFINITION  FOR Advanced Interrupt Controller
 // *****************************************************************************
 typedef struct _AT91S_AIC {
-	AT91_REG	 AIC_SMR[32]; 	// Source Mode egister
-	AT91_REG	 AIC_SVR[32]; 	// Source Vector egister
+	AT91_REG	 AIC_SMR[32]; 	// Source Mode register
+	AT91_REG	 AIC_SVR[32]; 	// Source Vector register
 	AT91_REG	 AIC_IVR; 	// IRQ Vector Register
 	AT91_REG	 AIC_FVR; 	// FIQ Vector Register
 	AT91_REG	 AIC_ISR; 	// Interrupt Status Register
